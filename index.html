@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>TRIÓ! Podcast</title>
+    </head>
+    <body>
+        <div class="absolute ml-1 align-middle mt-12 md:mt-72 xl:ml-96 xl:mt-72 w-auto">
+            <div class="grid justify-items-stretch md:justify-items-auto md:block">
+                <img class="justify-self-center md:justify-self-auto text-center w-56 h-56 md:w-80 md:h-80 md:float-left" src="img/trio.jpg"></img>
+            </div>
+            <p class="text-2xl ml-2 mr-2 md:text-3xl font-bold font-mono text-center md:text-left md:ml-64 mt-12 md:mt-28 w-auto" >Oops.. Az oldal nem jelenleg nem elérhető.</p>
+            <p class="text-base ml-2 mr-2 text-gray-400 text-center md:text-left font-mono  mt-4 md:ml-64 mt- w-auto">Kapcsolattartó email: info@triopodcast.hu</p>
+            <h1><span id="count">0</span> alkalommal volt megtekintve az oldal.</h1>
+        </div>
+    </body>
+    <script type="text/javascript">
+	    const countEl = document.getElementById('count');
+
+		updateVisitCount();
+
+		function updateVisitCount() {
+			fetch('https://api.countapi.xyz/update/triopodcast.hu/c48cfb62-fe27-409d-84d0-044f07ae7ed6/?amount=1')
+			.then(res => res.json())
+			.then(res => {
+				countEl.innerHTML = res.value;
+			})
+		}
+
+		// SOCIAL PANEL JS
+		const floating_btn = document.querySelector('.floating-btn');
+		const close_btn = document.querySelector('.close-btn');
+		const social_panel_container = document.querySelector('.social-panel-container');
+
+		floating_btn.addEventListener('click', () => {
+			social_panel_container.classList.toggle('visible')
+		});
+
+		close_btn.addEventListener('click', () => {
+			social_panel_container.classList.remove('visible')
+		});
+    </script>
+</html>
