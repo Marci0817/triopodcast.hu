@@ -1,2 +1,2 @@
-# tripodcast.hu
+# triopodcast.hu
 It's for triopodcast.hu
