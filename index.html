@@ -5,41 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>TRIÓ! Podcast</title>
+		<link rel="icon" href="img/icon.png" type="image/x-icon"> 
     </head>
     <body>
-        <div class="absolute ml-1 align-middle mt-12 md:mt-72 xl:ml-96 xl:mt-72 w-auto">
-            <div class="grid justify-items-stretch md:justify-items-auto md:block">
-                <img class="justify-self-center md:justify-self-auto text-center w-56 h-56 md:w-80 md:h-80 md:float-left" src="img/trio.jpg"></img>
-            </div>
-            <p class="text-2xl ml-2 mr-2 md:text-3xl font-bold font-mono text-center md:text-left md:ml-64 mt-12 md:mt-28 w-auto" >Oops.. Az oldal nem jelenleg nem elérhető.</p>
-            <p class="text-base ml-2 mr-2 text-gray-400 text-center md:text-left font-mono  mt-4 md:ml-64 mt- w-auto">Kapcsolattartó email: info@triopodcast.hu</p>
-            <h1><span id="count">0</span> alkalommal volt megtekintve az oldal.</h1>
-        </div>
+		<div class="container_text" style="text-align: center;">
+			<p>Oops.. Az oldal nem jelenleg nem elérhető.</p>
+			<span>Az oldal <b>nem</b> a <a href="https://www.youtube.com/c/TRI%C3%93Podcast">TRIÓ! Podcast</a> tulajdonában áll. A domain név eladó a kapcsolattartó emailen lehet érdeklődni.</span>
+			<br>
+			<span>Kapcsolattartó email: triopodcast.hu</span>
+		</div>
+		<div class="github"><a class="github-button" href="https://github.com/Marci0817/triopodcast.hu" data-color-scheme="no-preference: dark; light: light_high_contrast; dark: dark_high_contrast;" aria-label="Follow @Marci0817 on GitHub">@Marci0817/triopodcast.hu</a></div>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
     </body>
     <script type="text/javascript">
-	    const countEl = document.getElementById('count');
-
-		updateVisitCount();
-
-		function updateVisitCount() {
-			fetch('https://api.countapi.xyz/update/triopodcast.hu/c48cfb62-fe27-409d-84d0-044f07ae7ed6/?amount=1')
-			.then(res => res.json())
-			.then(res => {
-				countEl.innerHTML = res.value;
-			})
+		function createTrio(){
+			const trio = document.createElement("div");
+			trio.classList.add("trio");
+			trio.style.left = Math.random() * 100 + "vw";
+			trio.style.animationDuration = Math.random() * 1 + 3 +"s";
+			trio.innerHTML = "<img src='img/icon.png'>";
+			document.body.appendChild(trio);
+			setTimeout(()=>{
+				trio.remove();
+			}, 6000)
 		}
-
-		// SOCIAL PANEL JS
-		const floating_btn = document.querySelector('.floating-btn');
-		const close_btn = document.querySelector('.close-btn');
-		const social_panel_container = document.querySelector('.social-panel-container');
-
-		floating_btn.addEventListener('click', () => {
-			social_panel_container.classList.toggle('visible')
-		});
-
-		close_btn.addEventListener('click', () => {
-			social_panel_container.classList.remove('visible')
-		});
+		setInterval(createTrio,180);
     </script>
 </html>
