@@ -1,2 +1,2 @@
 # tripodcast.hu
-It's fot triopodcast.hu
+It's for triopodcast.hu
